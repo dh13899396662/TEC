@@ -1,0 +1,45 @@
+<!--attendance.wxml-->
+<view class="container">
+
+  <view class="attend-no-data t-co" wx:if="{{ !noData }}">
+    暂无课程可签到考勤
+  </view>
+
+  <view class="attend-wrap" wx:else>
+    <view class="attend-head">
+      <view class="attend-infos">
+        <view class="attend-info-left">
+          <view class="attend-info-title">{{ classInfo.title }}</view>
+          <view class="attend-info-name">{{ classInfo.name }}</view>
+          <view class="attend-info-time">{{ classInfo.time }}</view>
+        </view>
+        <view class="attend-info-right">
+          <view class="attend-info-total">{{ classInfo.total }}<text>人</text></view>
+          <view class="attend-info-btn">历史签到</view>
+        </view>
+      </view>
+      <view class="attend-all-btn">一键签到</view>
+    </view>
+    <view class="attend-student-list">
+      <view class="attend-student-item" wx:for="{{ studentList }}" wx:key="{{ index }}">
+        <view class="attend-student-info">
+          <view class="attend-student-name">
+            <text>{{ item.name }}</text>
+            <i class="iconfont {{ item.sex == '1' ? 'icon-nan' : 'icon-nv-copy' }}"></i>
+          </view> 
+          <view class="attend-student-status {{ item.status == '1' ? 'noattend' : 'attended' }}">
+            {{ item.status == '1' ? '未签到' : '已签到' }}
+          </view>
+        </view>
+        <view class="attend-student-handle">
+          <view class="attend-btn t-bg" wx:if="{{ item.status == '1' }}">签到</view>
+          <view class="attend-btn t-bg disable" wx:else>
+            <i class="iconfont icon-success"></i>
+          </view>
+          <view class="attend-btn-cancel" wx:if="{{ item.status == '2' }}">取消签到</view>
+        </view>
+      </view>
+    </view>
+  </view>
+
+</view>

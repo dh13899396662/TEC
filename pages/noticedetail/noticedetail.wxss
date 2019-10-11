@@ -1,0 +1,46 @@
+/**noticedetail.wxss**/
+page {
+	background-color: #f5faf7;
+	padding: 50rpx 0;
+}
+
+.detail-wrap {
+	width: 650rpx;
+	background-color: #fff;
+	border-radius: 40rpx;
+	box-shadow: 0 10rpx 25rpx rgba(0, 0, 0, .1);
+}
+
+.detail-title {
+	font-size: 32rpx;
+	font-weight: bold;
+	color: #3dad68;
+	padding: 40rpx 30rpx 30rpx;
+}
+
+.detail-date {
+	font-size: 24rpx;
+	color: #3dad68;
+	padding: 0 30rpx 30rpx;
+	border-bottom: 2rpx solid #eee;
+}
+
+.detail-date > i {
+	font-size: 22rpx;
+}
+
+.detail-date > text {
+	padding-left: 10rpx;
+}
+
+.detail-cont {
+	min-height: 500rpx;
+	padding: 40rpx;
+}
+
+.rich-cont {
+	line-height: 40rpx;
+	font-size: 28rpx;
+	color: #333;
+	text-indent: 56rpx;
+}

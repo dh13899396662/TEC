@@ -1,0 +1,92 @@
+/**lessondetail.wxss**/
+.team-info-wrap {
+	width: 750rpx;
+	border-bottom: 2rpx solid #eee;
+	box-sizing: border-box;
+	padding: 40rpx 60rpx;
+	display: flex;
+}
+
+.team-info-left {
+	width: 450rpx;
+	padding-right: 40rpx;
+	box-sizing: border-box;
+}
+
+.team-info-name {
+	min-height: 40rpx;
+	line-height: 40rpx;
+	font-size: 28rpx;
+	font-weight: bold;
+}
+
+.team-info-title {
+	min-height: 36rpx;
+	line-height: 36rpx;
+	font-size: 26rpx;
+	color: #999;
+	padding-top: 10rpx;
+}
+
+.team-info-right {
+	width: 180rpx;
+	text-align: center;
+}
+
+.team-info-time {
+	height: 40rpx;
+	line-height: 40rpx;
+	font-size: 32rpx;
+	font-weight: bold;
+}
+
+.team-info-total {
+	height: 36rpx;
+	line-height: 36rpx;
+	color: #999;
+	padding-top: 10rpx;
+}
+
+.team-info-total > i {
+	font-size: 22rpx;
+}
+
+.team-info-total > text {
+	font-size: 24rpx;
+	padding-left: 10rpx;
+}
+
+.lesson-list {
+	width: 630rpx;
+	padding: 0 60rpx;
+}
+
+.lesson-item {
+	width: 630rpx;
+	border-bottom: 2rpx solid #eee;
+	box-sizing: border-box;
+	padding: 30rpx 20rpx;
+}
+
+.lesson-date {
+	font-size: 24rpx;
+	padding: 0 10rpx 15rpx;
+}
+
+.lesson-box {
+	line-height: 40rpx;
+	font-weight: bold;
+	padding: 10rpx;
+	display: flex;
+}
+
+.lesson-left {
+	width: 50%;
+	font-size: 26rpx;
+}
+
+.lesson-right {
+	width: 50%;
+	font-size: 28rpx;
+	text-align: right;
+}

@@ -1,0 +1,13 @@
+<!--noticedetail.wxml-->
+<view class="container">
+  <view class="detail-wrap">
+    <view class="detail-title">{{ detailData.title }}</view>
+    <view class="detail-date">
+      <i class="iconfont icon-clock"></i>
+      <text>{{ detailData.date }}</text>
+    </view>
+    <view class="detail-cont">
+      <rich-text class="rich-cont" nodes="{{ detailData.content }}"></rich-text>
+    </view>
+  </view>
+</view>

@@ -1,0 +1,51 @@
+{
+  "pages": [
+      "pages/login/login",
+      "pages/index/index",
+        "pages/teacher-check/teacher-check",
+        "pages/attendance/attendance",
+        "pages/usercenter/usercenter",
+        "pages/userinfo/userinfo",
+        "pages/timetable/timetable",
+        "pages/noticelist/noticelist",
+        "pages/noticedetail/noticedetail",
+        "pages/lessonlist/lessonlist",
+        "pages/lessondetail/lessondetail",
+        "pages/comment/comment",
+        "pages/atlas/atlas",
+        "pages/upload/upload"
+    ],
+  "window": {
+    "backgroundTextStyle": "light",
+    "navigationBarBackgroundColor": "#fff",
+    "navigationBarTitleText": "教师课程",
+    "navigationBarTextStyle": "black"
+  },
+  "tabBar": {
+    "color": "#b3b3b3",
+    "selectedColor": "#3dad68",
+    "backgroundColor": "#fff",
+    "borderStyle": "black",
+    "list": [
+      {
+        "pagePath": "pages/index/index",
+        "text": "主页",
+        "iconPath": "static/images/tab-1-1.png",
+        "selectedIconPath": "static/images/tab-1-2.png"
+      },
+      {
+        "pagePath": "pages/attendance/attendance",
+        "text": "考勤",
+        "iconPath": "static/images/tab-2-1.png",
+        "selectedIconPath": "static/images/tab-2-2.png"
+      },
+      {
+        "pagePath": "pages/usercenter/usercenter",
+        "text": "我的",
+        "iconPath": "static/images/tab-3-1.png",
+        "selectedIconPath": "static/images/tab-3-2.png"
+      }
+    ]
+  },
+  "sitemapLocation": "sitemap.json"
+}

@@ -1,0 +1,34 @@
+/**index.wxss**/
+page {
+  background: #fff;
+}
+.container-menus {
+  text-align: center;
+  width: 90%;
+  margin-left: 5%;
+}
+.container-menus image {
+  width: 112rpx;
+  height: 112rpx;
+  margin-top: 154rpx;
+}
+.container-menus .top {
+  font-size: 32rpx;
+  text-align: left;
+  margin-top: 100rpx;
+}
+.container-menus .bottom {
+  font-size: 28rpx;
+  margin-top: 5rpx;
+  color: #999999;
+  text-align: left;
+}
+.container-menus button {
+  width: 100%;
+  box-sizing: border-box;
+  height: 92rpx;
+  background: #FD3131;
+  font-size: 36rpx;
+  color: #FFFFFF;
+  margin-top: 80rpx;
+}

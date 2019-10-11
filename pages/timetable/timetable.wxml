@@ -1,0 +1,41 @@
+<!--timetable.wxml-->
+<view class="wrap">
+  <view class="wrap-top">
+    <picker class="wrap-time-picker " value="{{ date }}" mode="date" fields="month"
+     start="{{ starDate}}" end="{{ endDate }}" bindchange="bindDateChange">
+      <view class="time-picker-month">{{ month }}月</view>
+      <view class="time-picker-year">{{ year }}</view>
+    </picker>
+    <view class="wrap-time-scroll">
+      <scroll-view class="wrap-scroll" scroll-x="true">
+        <view class="wrap-scroll-item active">第一周</view>
+        <view class="wrap-scroll-item">第二周</view>
+        <view class="wrap-scroll-item">第三周</view>
+        <view class="wrap-scroll-item">第四周</view>
+        <view class="wrap-scroll-item">第五周</view>
+        <view class="wrap-scroll-item">第六周</view>
+      </scroll-view>
+    </view>
+  </view>
+  <view class="wrap-tip">
+    <view class="tip">已结束</view>
+    <view class="tip tip-ing">进行中</view>
+    <view class="tip tip-wait">待开始</view>
+  </view>
+  <view class="wrap-body">
+    <view class="box-wrap" wx:for="{{ listData }}" wx:key="{{ index }}">
+      <view class="box-date">
+        <view class="box-month">{{ item.week }}</view>
+        <view class="box-year">{{ item.day }}日</view>
+      </view>
+      <view class="box-list">
+        <view wx:for="{{ item.lesson }}" wx:for-item="less" wx:for-index="idx" wx:key="{{ idx }}"
+         class="box-item {{ less.status == '1' ? 'tip-wait' : (less.status == '2' ? 'tip-ing' : '') }}">
+          <view class="box-name">{{ less.name }}</view>
+          <view class="box-team">{{ less.team }}</view>
+          <view class="box-time">{{ less.time }}</view>
+        </view>
+      </view>
+    </view>
+  </view>
+</view>

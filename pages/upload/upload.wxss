@@ -1,0 +1,89 @@
+/**upload.wxss**/
+page {
+	background-color: #f5faf7;
+	padding-top: 5rpx;
+}
+
+.form-wrap {
+	width: 750rpx;
+	background-color: #fff;
+	box-sizing: border-box;
+	padding: 50rpx 60rpx;
+	margin-bottom: 30rpx;
+}
+
+.form-title {
+	font-size: 32rpx;
+	font-weight: bold;
+}
+
+.form-picker {
+	width: 100%;
+	line-height: 40rpx;
+	padding-top: 40rpx;
+	position: relative;
+	z-index: 1;
+}
+
+.form-value {
+	min-height: 40rpx;
+	font-size: 28rpx;
+	color: #666;
+}
+
+.form-picker i {
+	font-size: 26rpx;
+	position: absolute;
+	z-index: 2;
+	top: 40rpx;
+	right: 0;
+}
+
+.form-cont {
+	width: 100%;
+	padding-top: 40rpx;
+}
+
+.form-image,
+.form-image > image,
+.form-upload {
+	width: 160rpx;
+	height: 160rpx;
+	float: left;
+}
+
+.form-image > image {
+	display: block;
+}
+
+.form-image,
+.form-upload {
+	line-height: 160rpx;
+	text-align: center;
+	border: 4rpx solid #eee;
+	border-radius: 8rpx;
+	overflow: hidden;
+	margin-left: 40rpx;
+}
+
+.form-image:first-child {
+	margin: 0;
+}
+
+.form-upload > i {
+	font-size: 46rpx;
+	color: #eee;
+}
+
+.form-btn {
+	width: 630rpx;
+	height: 90rpx;
+	line-height: 90rpx;
+	font-size: 36rpx;
+	font-weight: bold;
+	color: #fff;
+	text-align: center;
+	border-radius: 45rpx;
+	box-shadow: 0 10rpx 20rpx rgba(0, 0, 0, .08);
+	margin-top: 40rpx;
+}

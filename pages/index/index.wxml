@@ -1,0 +1,59 @@
+<!--index.wxml-->
+<view class="container">
+  <view class="banner-wrap">
+    <view class="banner-img">
+      <image src="../../static/images/homeBanner.png" mode="aspectFill"></image>
+    </view>
+  </view>
+  <view class="notice-wrap">
+    <view class="notice-head t-co" bindtap="toNoticeList">
+      <i class="iconfont icon-iconxx2"></i>
+      <text>培训公告</text>
+    </view>
+    <view class="notice-swiper">
+      <swiper autoplay vertical circular>
+        <swiper-item wx:for="{{ noticeData }}" wx:key="{{ index }}">
+          <view class="swiper-item" bindtap="toNoticeDetail" data-id="{{ item.id }}">{{ item.title }}</view>
+        </swiper-item>
+      </swiper>
+    </view>
+  </view>
+  <view class="statistics-wrap">
+    <view class="statistics-item">
+      <view class="statistics-data t-co-orange">
+        <b>{{ statistics.total }}</b>
+        <text>个班</text>
+      </view>
+      <view class="statistics-name">代课班级</view>
+    </view>
+    <view class="statistics-item">
+      <view class="statistics-data t-co">
+        <b>{{ statistics.hours }}</b>
+        <text>小时</text>
+      </view>
+      <view class="statistics-name">共计课时</view>
+    </view>
+  </view>
+  <view class="curriculum-wrap">
+    <view class="curriculum-head">
+      <view class="curriculum-head-title">
+        <i class="iconfont icon-bookmark t-co"></i>
+        <text>班级课时</text>
+      </view>
+      <view class="curriculum-head-more" bindtap="toLessonList">查看更多</view>
+    </view>
+    <view class="curriculum-body">
+      <view class="curriculum-item" wx:for="{{ curriculumData }}" wx:key="{{ index }}" bindtap="toLessonDetail">
+        <view class="curriculum-item-info">
+          <view class="curriculum-item-name">{{ item.name }}</view>
+          <view class="curriculum-item-num">
+           共 {{ item.total }} 名学生
+          </view>
+        </view>
+        <view class="curriculun-item-data t-co">
+          {{ item.hours }} 小时
+        </view>
+      </view>
+    </view>
+  </view>
+</view>

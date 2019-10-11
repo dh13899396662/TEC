@@ -1,0 +1,33 @@
+<!--noticedetail.wxml-->
+<view class="container">
+  <view class="avator-wrap">
+    <view class="avator-img">
+      <image src="../../static/images/avator.jpg" mode="aspectFill"></image>
+    </view>
+    <view class="avator-handle">
+      <view class="avator-btn">
+        <i class="iconfont icon-photo"></i>
+        <text>更换头像</text>
+      </view>
+    </view>
+  </view>
+  <view class="info-item">
+    <view class="info-title">您的姓名</view>
+    <view class="info-input">
+      <input type="text" placeholder="请输入您的真实姓名"></input>
+    </view>
+  </view>
+  <view class="info-item">
+    <view class="info-title">电话号码</view>
+    <view class="info-input">
+      <input type="number" placeholder="请输入您的电话号码"></input>
+    </view>
+  </view>
+  <view class="info-item">
+    <view class="info-title">邮箱地址</view>
+    <view class="info-input">
+      <input type="text" placeholder="请输入您的电子邮箱"></input>
+    </view>
+  </view>
+  <view class="info-btn">完成</view>
+</view>

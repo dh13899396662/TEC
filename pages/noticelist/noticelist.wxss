@@ -1,0 +1,54 @@
+/**noticelist.wxss**/
+page {
+	padding-bottom: 50rpx;
+}
+
+.notice-wrap {
+	width: 650rpx;
+	border-radius: 20rpx;
+	box-shadow: 0 10rpx 25rpx rgba(0, 0, 0, .1);
+	box-sizing: border-box;
+	padding: 40rpx 40rpx 40rpx 0;
+	margin-top: 50rpx;
+}
+
+.notice-title {
+	height: 60rpx;
+	line-height: 30rpx;
+	font-size: 28rpx;
+	font-weight: bold;
+	padding-left: 80rpx;
+	position: relative;
+	z-index: 1;
+}
+
+.notice-title > i {
+	position: absolute;
+	z-index: 2;
+	top: 0;
+	left: 0;
+	width: 60rpx;
+	height: 30rpx;
+	line-height: 30rpx;
+	background-color: #3dad68;
+	font-size: 24rpx;
+	font-weight: normal;
+	color: #fff;
+	text-align: center;
+	border-radius: 0 8rpx 8rpx 0;
+}
+
+.notice-date {
+	font-size: 24rpx;
+	padding-left: 80rpx;
+	margin-top: 30rpx;
+}
+
+.notice-date > i {
+	font-size: 22rpx;
+	color: #3dad68;
+}
+
+.notice-date > text {
+	color: #bdbfbc;
+}

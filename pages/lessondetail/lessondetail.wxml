@@ -1,0 +1,25 @@
+<!--lessondetail.wxml-->
+<view class="container">
+  <view class="team-info-wrap">
+    <view class="team-info-left">
+      <view class="team-info-name">{{ teamInfo.name }}</view>
+      <view class="team-info-title">{{ teamInfo.title }}</view>
+    </view>
+    <view class="team-info-right">
+      <view class="team-info-time t-co">共 {{ teamInfo.time }} 小时</view>
+      <view class="team-info-total">
+      <i class="iconfont icon-user2"></i>
+      <text>{{ teamInfo.total }} 名学生</text>
+    </view>
+    </view>
+  </view>
+  <view class="lesson-list">
+    <view class="lesson-item" wx:for="{{ lessonData }}" wx:key="{{ index }}">
+      <view class="lesson-date t-co-orange">{{ item.date }}</view>
+      <view class="lesson-box" wx:for="{{ item.list }}" wx:for-item="list" wx:for-index="idx" wx:key="{{ idx }}">
+        <view class="lesson-left">{{ list.time }}</view>
+        <view class="lesson-right t-co">{{ list.total }} 小时</view>
+      </view>
+    </view>
+  </view>
+</view>

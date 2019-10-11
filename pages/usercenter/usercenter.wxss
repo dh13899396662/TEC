@@ -1,0 +1,153 @@
+/**usercenter.wxss**/
+.user-wrap {
+	width: 750rpx;
+	padding: 50rpx 50rpx 120rpx;
+	box-sizing: border-box;
+	display: flex;
+}
+
+.user-avator {
+	width: 140rpx;
+	height: 140rpx;
+}
+
+.userinfo-avatar {
+	width: 140rpx;
+	height: 140rpx;
+	border: 4rpx solid #fff;
+	border-radius: 70rpx;
+	box-sizing: border-box;
+	box-shadow: 0 10rpx 20rpx rgba(0, 0, 0, .08);
+	display: block;
+	overflow: hidden;
+}
+
+.user-info {
+	width: 480rpx;
+	line-height: 50rpx;
+	padding: 20rpx 30rpx;
+	box-sizing: border-box;
+}
+
+.user-name {
+	font-size: 36rpx;
+	font-weight: bold;
+	color: #fff;
+}
+
+.user-name text {
+	font-size: 28rpx;
+	padding-left: 20rpx;
+}
+
+.user-tag {
+	font-size: 24rpx;
+	color: rgba(255, 255, 255, .75);
+}
+
+.user-handle {
+	width: 130rpx;
+	padding: 50rpx 0;
+}
+
+.user-btn {
+	width: 130rpx;
+	height: 40rpx;
+	line-height: 40rpx;
+	background-color: rgba(0, 0, 0, .35);
+	font-size: 22rpx;
+	color: #fff;
+	text-align: center;
+	border-radius: 20rpx;
+}
+
+.user-menu-wrap {
+	position: relative;
+	z-index: 1;
+	top: -50rpx;
+	width: 750rpx;
+	background-color: #fff;
+	border-radius: 40rpx 40rpx 0 0;
+	padding: 0 50rpx;
+	box-sizing: border-box;
+}
+
+.user-menu {
+	width: 650rpx;
+	border-bottom: 2rpx solid #f4f6fa;
+	padding: 50rpx 0;
+	display: flex;
+}
+
+.user-menu:first-child {
+	border: none;
+}
+
+.user-menu-name {
+	width: 500rpx;
+	font-size: 32rpx;
+	font-weight: bold;
+}
+
+.user-menu-name > text {
+	font-size: 24rpx;
+	padding-left: 10rpx;
+}
+
+.user-menu-more {
+	width: 150rpx;
+	font-size: 24rpx;
+	color: #666;
+	text-align: right;
+}
+
+.user-near-work {
+	width: 650rpx;
+	border: 2rpx solid #e5e5e5;
+	border-radius: 20rpx;
+	box-sizing: border-box;
+	padding: 40rpx;
+	display: flex;
+}
+
+.user-near-info {
+	width: 410rpx;
+}
+
+.user-near-date {
+	font-size: 36rpx;
+	font-weight: bold;
+}
+
+.user-near-date > text {
+	font-size: 26rpx;
+	opacity: .75;
+}
+
+.user-near-name {
+	font-size: 28rpx;
+	font-weight: bold;
+	padding: 10rpx 0;
+}
+
+.user-near-team {
+	font-size: 24rpx;
+	color: #999;
+}
+
+.user-near-time {
+	width: 156rpx;
+	text-align: center;
+	padding: 30rpx 0;
+}
+
+.user-near-t {
+	line-height: 40rpx;
+	font-size: 24rpx;
+}
+
+.user-near-c {
+	font-size: 36rpx;
+}
+
+

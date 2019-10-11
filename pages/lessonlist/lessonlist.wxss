@@ -1,0 +1,92 @@
+/**lessonlist.wxss**/
+.wrap {
+	padding-bottom: 40rpx;
+}
+
+.lesson-top {
+	position: fixed;
+	z-index: 9;
+	top: 0;
+	width: 750rpx;
+	height: 86rpx;
+	line-height: 84rpx;
+	background-color: #fff;
+	font-size: 26rpx;
+	text-align: center;
+	border-bottom: 2rpx solid #eee;
+}
+
+.lesson-top > i {
+	font-size: 24rpx;
+	padding-left: 10rpx;
+}
+
+.lesson-top > text {
+	font-weight: bold;
+}
+
+.lesson-list {
+	width: 660rpx;
+	padding: 0 45rpx;
+	padding-top: 86rpx;
+}
+
+.lesson-item {
+	width: 640rpx;
+	border-bottom: 2rpx solid #eee;
+	padding: 50rpx 10rpx;
+	display: flex;
+}
+
+.lesson-left {
+	width: 500rpx;
+	padding-right: 50rpx;
+	box-sizing: border-box;
+}
+
+.lesson-name {
+	height: 50rpx;
+	line-height: 50rpx;
+	font-size: 28rpx;
+	font-weight: bold;
+	word-break: break-all;
+	white-space: nowrap;
+	text-overflow: ellipsis;
+	overflow: hidden;
+}
+
+.lesson-title {
+	height: 40rpx;
+	line-height: 40rpx;
+	font-size: 26rpx;
+	color: #abdf9d;
+	word-break: break-all;
+	white-space: nowrap;
+	text-overflow: ellipsis;
+	overflow: hidden;
+}
+
+.lesson-total {
+	height: 40rpx;
+	line-height: 40rpx;
+	font-size: 24rpx;
+	color: #999;
+	padding-top: 10rpx;
+}
+
+.lesson-total > i {
+	font-size: 22rpx;
+}
+
+.lesson-total > text {
+	padding-left: 10rpx;
+}
+
+.lesson-right {
+	width: 120rpx;
+	height: 140rpx;
+	line-height: 130rpx;
+	font-size: 32rpx;
+	font-weight: bold;
+	text-align: right;
+}

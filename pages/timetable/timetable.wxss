@@ -1,0 +1,175 @@
+/**timetable.wxss**/
+page,
+.wrap {
+	background-color: #f7faf6;
+}
+
+.wrap-top {
+	position: fixed;
+	z-index: 9;
+	top: 0;
+	width: 750rpx;
+	height: 112rpx;
+	background-color: #fff;
+	padding: 24rpx 0;
+	box-sizing: border-box;
+}
+
+.wrap-time-picker {
+	width: 136rpx;
+	text-align: center;
+	padding: 2rpx 0;
+	position: relative;
+	z-index: 1;
+	float: left;
+}
+
+.wrap-time-picker::after {
+	content: '';
+	position: absolute;
+	z-index: 2;
+	top: 0;
+	right: -1rpx;
+	bottom: 0;
+	width: 2rpx;
+	background-color: #eee;
+}
+
+
+.time-picker-month,
+.time-picker-year {
+	line-height: 30rpx;
+	font-size: 24rpx;
+	font-weight: bold;
+}
+
+.wrap-time-scroll {
+	width: 614rpx;
+	height: 64rpx;
+	padding-left: 20rpx;
+	box-sizing: border-box;
+	float: left;
+	overflow: hidden;
+}
+
+.wrap-scroll {
+	width: 594rpx;
+	height: 80rpx;
+	white-space: nowrap;
+}
+
+.wrap-scroll-item {
+	height: 64rpx;
+	line-height: 64rpx;
+	font-size: 24rpx;
+	color: #666;
+	text-align: center;
+	padding: 0 20rpx;
+	display: inline-block;
+}
+
+.wrap-scroll-item:last-child {
+	padding: 0 40rpx 0 20rpx;
+}
+
+.wrap-scroll-item.active {
+	color: #59c53b;
+}
+
+.wrap-tip {
+	width: 750rpx;
+	height: 170rpx;
+	background-color: #fff;
+	text-align: right;
+	padding: 110rpx 40rpx 10rpx 0;
+	box-sizing: border-box;
+}
+
+.tip {
+	width: 80rpx;
+	height: 38rpx;
+	line-height: 38rpx;
+	background-color: #f3f6f2;
+	font-size: 20rpx;
+	color: #bdbfbc;
+	text-align: center;
+	border-radius: 4rpx;
+	display: inline-block;
+	margin-left: 20rpx;
+}
+
+.tip-ing {
+	background-color: #f5e0d1 !important;
+	color: #f77c2d !important;
+}
+
+.tip-wait {
+	background-color: #d1efc9 !important;
+	color: #59c53b !important;
+}
+
+.wrap-body {
+	padding-bottom: 20rpx;
+}
+
+.box-wrap {
+	margin-top: 2rpx;
+	display: flex;
+}
+
+.box-date {
+	width: 136rpx;
+	height: 220rpx;
+	background-color: #fff;
+	text-align: center;
+	box-sizing: border-box;
+	padding: 70rpx 0;
+}
+
+.box-month,
+.box-year {
+	height: 40rpx;
+	line-height: 40rpx;
+	font-size: 28rpx;
+}
+
+.box-list {
+	width: 614rpx;
+	display: flex;
+}
+
+.box-item {
+	width: 305rpx;
+	height: 220rpx;
+	background-color: #f3f6f2;
+	color: #bdbfbc;
+	box-sizing: border-box;
+	padding: 20rpx 30rpx;
+	margin-left: 2rpx;
+}
+
+.box-name {
+	height: 40rpx;
+	line-height: 40rpx;
+	font-size: 26rpx;
+	font-weight: bold;
+	word-break: break-all;
+	white-space: nowrap;
+	text-overflow: ellipsis;
+	overflow: hidden;
+	margin: 5rpx 0;
+}
+
+.box-team {
+	height: 70rpx;
+	line-height: 34rpx;
+	font-size: 24rpx;
+	overflow: hidden;
+}
+
+.box-time {
+	height: 60rpx;
+	font-size: 24rpx;
+	font-weight: bold;
+	padding-top: 20rpx;
+}

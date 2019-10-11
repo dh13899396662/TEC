@@ -1,0 +1,54 @@
+<!--comment.wxml-->
+<view class="wrap">
+  <view class="comment-top">
+    <i class="iconfont icon-filter t-co"></i>
+    <picker class="picker-item t-bg" bindchange="teamChange"
+     value="{{ team }}" range="{{ teamData }}">{{ teamData[team] }}</picker>
+    <picker class="picker-item t-bg" bindchange="timeChange"
+     value="{{ time }}" range="{{ timeData }}">{{ timeData[time] }}</picker>
+    <picker class="picker-item t-bg" bindchange="typeChange"
+     value="{{ type }}" range="{{ typeData }}">{{ typeData[type] }}</picker>
+  </view>
+  <view class="comment-wrap">
+    <view class="comment-item" wx:for="{{ listData }}" wx:key="{{ index }}">
+      <view class="comment-head">
+        <view class="comment-avator">
+          <image src="{{ item.avator }}" mode="aspectFill"></image>
+        </view>
+        <view class="comment-info">
+          <view class="comment-name">{{ item.name }}</view>
+          <view class="comment-time">{{ item.time }}</view>
+        </view>
+        <view class="comment-handle">
+          <view class="comment-btn t-co" bindtap="replyStar">回复</view>
+        </view>
+      </view>
+      <view class="comment-cont">{{ item.cont }}</view>
+      <view class="comment-reply" wx:if="{{ item.reply }}"
+       wx:for="{{ item.reply }}" wx:for-item="reply" wx:for-index="idx" wx:key="idx">
+        <text class="t-co">回复：</text>{{ reply }}
+      </view>
+    </view>
+  </view>
+
+  <view class="dialog-mask" wx:if="{{ showDialog }}"></view>
+  <view class="dialog-wrap" wx:if="{{ showDialog }}">
+    <view class="dialog-head">
+      <view class="dialog-title">回复点评</view>
+      <view class="dialog-close" bindtap="closeDialog">
+        <i class="iconfont icon-close"></i>
+      </view>
+    </view>
+    <view class="dialog-body">
+      <view class="dialog-tip">
+        回复<text class="t-co">艾米丽</text>的点评:
+      </view>
+      <view class="dialog-cont">
+        <textarea placeholder="点击这里输入回复内容"></textarea>
+      </view>
+    </view>
+    <view class="dialog-foot">
+      <view class="dialog-btn t-bg">回复</view>
+    </view>
+  </view>
+</view>

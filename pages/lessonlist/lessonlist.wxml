@@ -1,0 +1,20 @@
+<!--lessonlist.wxml-->
+<view class="wrap">
+  <picker class="lesson-top" value="{{ index }}" range="{{teamData}}" bindchange="bindPickerChange">
+    <text>{{ teamData[index] }}</text>
+    <i class="iconfont icon-down1"></i>
+  </picker>
+  <view class="lesson-list">
+    <view class="lesson-item" wx:for="{{ listData }}" wx:key="{{ index }}" bindtap="toLessonDetail">
+      <view class="lesson-left">
+        <view class="lesson-name">{{ item.name }}</view>
+        <view class="lesson-title">{{ item.title }}</view>
+        <view class="lesson-total">
+          <i class="iconfont icon-user2"></i>
+          <text>共 {{ item.total }} 名学生</text>
+        </view>
+      </view>
+      <view class="lesson-right t-co">{{ item.time }} 小时</view>
+    </view>
+  </view>
+</view>

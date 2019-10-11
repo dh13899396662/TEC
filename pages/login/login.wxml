@@ -1,0 +1,9 @@
+<!--index.wxml-->
+<view class="container">
+  <view class='container-menus'>
+    <image src='/images/user_image1@2x.png'></image>
+    <view class='top'>登录后智慧永达小程序将获得以下权限：</view>
+    <view class='bottom'> • 获得你的公开信息（昵称、头像等）</view>
+    <button open-type="getUserInfo" bindgetuserinfo="userInfoHandler">授权登录</button>
+  </view>
+</view>

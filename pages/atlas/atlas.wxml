@@ -1,0 +1,48 @@
+<!--atlas.wxml-->
+<view class="wrap">
+  <view class="atlas-top">
+    <picker class="search-picker t-co" bindchange="teamChange"
+     value="{{ team }}" range="{{ teamData }}"> {{ teamData[team] }} </picker>
+    <view class="search-input">
+      <input type="text" placeholder="点击这里输入学生姓名"></input>
+    </view>
+    <view class="search-btn t-bg">搜索</view>
+  </view>
+  <view class="atlas-wrap">
+    <view class="atlas-item" wx:for="{{ listData }}" wx:key="{{ index }}" bindtap="seeAtlas">
+      <view class="atlas-image">
+        <image src="{{ item.path }}" mode="aspectFill"></image>
+        <view class="atlas-team">{{ item.team }}</view>
+      </view>
+      <view class="atlas-name">
+        <text>{{ item.name }}</text>
+        <i class="iconfont {{ item.sex == '1' ? 'icon-nan' : 'icon-nv-copy' }}"></i>
+      </view>
+      <view class="atlas-time">{{ item.time }}</view>
+    </view>
+  </view>
+  <view class="atlas-foot t-bg" bindtap="toUpload">
+    <i class="iconfont icon-photo"></i>
+    立即上传
+  </view>
+
+  <view class="dialog-mask" wx:if="{{ showDialog }}"></view>
+  <view class="dialog-wrap" wx:if="{{ showDialog }}">
+    <view class="dialog-body">
+      <view class="dialog-image">
+        <image src="../../static/images/atlas.jpg" mode="aspectFit"></image>
+      </view>
+      <view class="dialog-name">
+        <text>艾米丽</text>
+        <i class="iconfont icon-nv-copy"></i>
+      </view>
+      <view class="dialog-team t-co">艺术培训一班</view>
+      <view class="dialog-time">上传时间：2019年10月01日 12:24</view>
+    </view>
+    <view class="dialog-foot">
+      <view class="dialog-btn btn-close" bindtap="deleteAtlas">删除</view>
+      <view class="dialog-btn t-bg" bindtap="closeDialog">关闭</view>
+    </view>
+  </view>
+
+</view>

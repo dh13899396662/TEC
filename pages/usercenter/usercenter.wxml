@@ -1,0 +1,51 @@
+<!--usercenter.wxml-->
+<view class="container">
+  <view class="user-wrap t-bg">
+    <view class="user-avator">
+      <open-data class="userinfo-avatar" type="userAvatarUrl"></open-data>
+    </view>
+    <view class="user-info">
+      <view class="user-name">
+        <open-data type="userNickName"></open-data>
+        <!-- <text>老师</text> -->
+      </view>
+      <view class="user-tag">
+        {{ userInfo.tag }}
+      </view>
+    </view>
+    <view class="user-handle">
+      <view class="user-btn" bindtap="toUserInfo">完善信息</view>
+    </view>
+  </view>
+  <view class="user-menu-wrap">
+    <view class="user-menu">
+      <view class="user-menu-name">近期课程</view>
+      <view class="user-menu-more" bindtap="toTimeTable">查看课程表</view>
+    </view>
+    
+    <view class="user-near-work">
+      <view class="user-near-info">
+        <view class="user-near-date t-co">10-01<text>周二</text></view>
+        <view class="user-near-name">艺术培训课程教学</view>
+        <view class="user-near-team">艺术培训课程二班</view>
+      </view>
+      <view class="user-near-time">
+        <view class="user-near-t">开课时间</view>
+        <view class="user-near-c t-co-orange">16:00</view>
+      </view>
+    </view>
+
+    <view class="user-menu" bindtap="toComment">
+      <view class="user-menu-name">课程点评<text class="t-co">(24)</text></view>
+      <view class="user-menu-more">前往查看</view>
+    </view>
+    <view class="user-menu" bindtap="toAtlas">
+      <view class="user-menu-name">学生风采</view>
+      <view class="user-menu-more">查看管理</view>
+    </view>
+    <view class="user-menu" bindtap="toSystem">
+      <view class="user-menu-name">课程平台</view>
+      <view class="user-menu-more">立即前往</view>
+    </view>
+  </view>
+</view>
