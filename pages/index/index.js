@@ -1,10 +1,18 @@
 //index.js
 //获取应用实例
+import * as api from '../../api/index.js'
+
 const app = getApp()
 
 Page({
   data: {
     // 渲染测试数据
+    noticeParams: {
+      pageNumber: 1,
+      pageSize: 20,
+      sortField: '',
+      sortMethord: 'asc'
+    },
     noticeData: [{
       id: '1',
       title: '70年,教育与共和国砥砺同行'
@@ -60,6 +68,9 @@ Page({
     })
   },
   onLoad: function() {
-
+    this.queryNotices()
+  },
+  queryNotices () {
+    api.notices(this.data.noticeParams)
   }
 })

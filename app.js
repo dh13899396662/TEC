@@ -47,10 +47,10 @@ App({
     teacherCheck() {
         api.teacherCheck().then(res => {
             console.log(res)
-            if (res.data.retCode === '000003') {
+            if (res.data.retCode !== '000003') {
                 console.log(111)
                 xx.reLaunch('/pages/teacher-check/teacher-check')
-            } else xx.newTo('/pages/index/index')
+            } else xx.reLaunch('/pages/index/index')
         })
     },
   globalData: {

@@ -8,3 +8,10 @@ export const teacherCheck = data => request(`/jiaofei/wxa/teacher/teacherInfo`, 
 
 // 教师认证
 export const teacherCertificat = data => request(`/jiaofei/wxa/teacher/validateTeacher`, 'post', data, true)
+
+// 通知公告
+export const notices = data => request(`/jiaofei/wxa/common/queryNotices`, 'get', data, true)
+
+// 我的排课
+export const kaoQin = data => request(`/jiaofei/wxa/teacher/queryKaoqins`, 'get', data, true)
+

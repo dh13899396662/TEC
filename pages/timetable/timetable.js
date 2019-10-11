@@ -1,5 +1,6 @@
 //timetable.js
 //获取应用实例
+import * as api from '../../api/index.js'
 const app = getApp()
 
 Page({
@@ -89,7 +90,7 @@ Page({
     wx.setNavigationBarTitle({
       title: '课程表'
     })
-
+    this._kaoQin()
     let date = new Date(),
       m = date.getMonth() + 1,
       month = m > 9 ? m : '0' + m,
@@ -100,5 +101,8 @@ Page({
       year: year,
       endDate: year + '-' + month
     })
+  },
+  _kaoQin () {
+    api.kaoQin()
   }
 })
