@@ -3,7 +3,7 @@ import * as api from './api/index.js'
 import * as xx from './common/wx.js' 
 App({
   onLaunch: function () {
-      this._getToken()
+    this._getToken()
     // 展示本地存储能力
     var logs = wx.getStorageSync('logs') || []
     logs.unshift(Date.now())
@@ -42,16 +42,18 @@ App({
             wx.reLaunch({
                 url: '/pages/login/login'
             })
-        } else this.teacherCheck()
+        } else this.teacherChecked()
     },
-    teacherCheck() {
+    teacherChecked() {
+        console.log('teacherChecked')
         api.teacherCheck().then(res => {
             console.log(res)
-            if (res.data.retCode !== '000003') {
-                console.log(111)
+            if (res.data.retCode === '000001') {
                 xx.reLaunch('/pages/teacher-check/teacher-check')
-            } else xx.reLaunch('/pages/index/index')
-        })
+            } else {
+                xx.reLaunch('/pages/index/index')
+            }
+        }).catch(ret => console.log(ret))
     },
   globalData: {
     userInfo: null,

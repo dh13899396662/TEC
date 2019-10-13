@@ -32,6 +32,7 @@ Page({
             success(res) {
                 if (res.code) {
                     let obj = {}
+                    console.log(res)
                     obj.code = res.code
                     that._getToken(obj)
                 } else {
@@ -48,18 +49,29 @@ Page({
             if (res.data.sessionId) {
                 xx.hide()
                 xx.setCookie('token', res.data.sessionId)
-                this.teacherCheck()
+                res.data.isNew && this.infoCheck()
+                !res.data.isNew && this.teacherCheck()
             } else {
                 xx.toast2(res.data.msg)
             }
         })
     },
+    infoCheck () {
+        let that = this
+        wx.getUserInfo({
+            success: function (res) {
+                console.log(res)
+                let data = { signature: res.signature, rawData: res.rawData, iv: res.iv, encryptedData: encodeURIComponent(res.encryptedData) }
+                api.getUnionId(data).then(res => that.teacherCheck()).catch(ret => {throw Error(ret)
+})
+            }
+        })
+    },
     teacherCheck () {
         api.teacherCheck().then(res => {
-            console.log(res)
-            if (res.data.retCode === '000003') {
+            if (res.data.retCode === '000004') {
                 xx.newTo('/pages/teacher-check/teacher-check')
-            } else xx.newTo('/pages/login/login')
+            }
         })
     }
 })

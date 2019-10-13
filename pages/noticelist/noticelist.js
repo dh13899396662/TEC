@@ -1,5 +1,6 @@
 //noticelist.js
 //获取应用实例
+import * as xx from '../../common/wx.js'
 const app = getApp()
 
 Page({
@@ -24,11 +25,15 @@ Page({
   },
   // 前往详情
   toNoticeDetail: function (e) {
-    wx.navigateTo({
-      url: '../noticedetail/noticedetail'
-    })
+      let index = e.currentTarget.dataset.index;
+      let datas = JSON.stringify(this.data.listData[index])
+    xx.navTo(`/pages/noticedetail/noticedetail?data=${datas}`)
   },
-  onLoad: function() {
+  onLoad: function(options) {
+      console.log(JSON.parse(options.noticeData))
+      this.setData({
+          listData: JSON.parse(options.noticeData)
+      })
     wx.setNavigationBarTitle({
       title: '培训公告'
     })

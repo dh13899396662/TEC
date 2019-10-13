@@ -13,7 +13,7 @@
     <view class="notice-swiper">
       <swiper autoplay vertical circular>
         <swiper-item wx:for="{{ noticeData }}" wx:key="{{ index }}">
-          <view class="swiper-item" bindtap="toNoticeDetail" data-id="{{ item.id }}">{{ item.title }}</view>
+          <view class="swiper-item" bindtap="toNoticeDetail" data-index="{{ index }}">{{ item.notice_title }}</view>
         </swiper-item>
       </swiper>
     </view>
@@ -45,13 +45,13 @@
     <view class="curriculum-body">
       <view class="curriculum-item" wx:for="{{ curriculumData }}" wx:key="{{ index }}" bindtap="toLessonDetail">
         <view class="curriculum-item-info">
-          <view class="curriculum-item-name">{{ item.name }}</view>
+          <view class="curriculum-item-name">{{ item.course_name }}</view>
           <view class="curriculum-item-num">
-           共 {{ item.total }} 名学生
+           共 10 名学生
           </view>
         </view>
         <view class="curriculun-item-data t-co">
-          {{ item.hours }} 小时
+          {{ 0 }} 小时
         </view>
       </view>
     </view>

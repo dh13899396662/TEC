@@ -1,31 +1,36 @@
 <!--upload.wxml-->
 <view class="container">
-  <view class="form-wrap">
+  <!-- <view class="form-wrap">
     <view class="form-title">所在班级</view>
     <picker class="form-picker" bindchange="teamChange"
      value="{{ team }}" range="{{ teamData }}">
       <view class="form-value">{{ teamData[team] }}</view>
       <i class="iconfont icon-next"></i>
     </picker>
+  </view> -->
+  <view class="form-wrap">
+  <input placeholder='输入学生姓名' bindconfirm='searchList'></input>
   </view>
   <view class="form-wrap">
     <view class="form-title">选择学生</view>
-    <picker class="form-picker" bindchange="studentChange"
-     value="{{ student }}" range="{{ studentData }}">
-      <view class="form-value">{{ studentData[student] }}</view>
+    <view class="form-picker form-value" bindtap='pickerClick' wx:if="{{!studentData.length}}">请选择学生</view>
+    <picker class="form-picker" bindchange="studentChange" wx:if="{{studentData.length}}"
+     value="{{ student }}" range-key="stu_name" range="{{ studentData }}">
+     <view class="form-value"wx:if="{{!student}}">请选择学生</view>
+      <view class="form-value" wx:if="{{student}}">{{ studentData[student].stu_name }}</view>
       <i class="iconfont icon-next"></i>
     </picker>
   </view>
   <view class="form-wrap">
     <view class="form-title">上传照片</view>
     <view class="form-cont">
-      <view class="form-image">
-        <image src="../../static/images/atlas.jpg" mode="aspectFill"></image>
+      <view class="form-image" wx:for="{{imgList}}" wx:key="{{index}}">
+        <image src="{{item}}" mode="aspectFill"></image>
       </view>
-      <view class="form-upload">
+      <view class="form-upload" bindtap='chooseImage'>
         <i class="iconfont icon-photo"></i>
       </view>
     </view>
   </view>
-  <view class="form-btn t-bg">立即发布</view>
+  <view class="form-btn t-bg" catchtap='publish'>立即发布</view>
 </view>

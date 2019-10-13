@@ -1,5 +1,7 @@
 //lessonlist.js
 //获取应用实例
+import * as xx from '../../common/wx.js'
+import * as api from '../../api/index.js'
 const app = getApp()
 
 Page({
@@ -52,8 +54,21 @@ Page({
     })
   },
   onLoad: function() {
+    this.getMyCouplan()
     wx.setNavigationBarTitle({
       title: '课时统计'
     })
-  }
+  },
+    getMyCouplan() {
+        api.myCouplan().then(res => {
+            if (res.data.retCode === xx.ERRCODE.OK) {
+                this.setData({
+                    listData: res.data.retMsg.list
+                })
+            }
+            console.log(res)
+        }).catch(ret => {
+            console.log(ret)
+        })
+    }
 })

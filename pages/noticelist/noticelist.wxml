@@ -1,13 +1,13 @@
 <!--noticelist.wxml-->
 <view class="container">
-  <view class="notice-wrap" wx:for="{{ listData }}" wx:key="{{ index }}" bindtap="toNoticeDetail">
+  <view class="notice-wrap" wx:for="{{ listData }}" wx:key="{{ index }}" catchtap="toNoticeDetail" wx:for-index='index' data-index="{{ index }}">
     <view class="notice-title">
       <i class="iconfont icon-iconxx2"></i>
-      {{ item.title }}
+      {{ item.notice_title }}
     </view>
     <view class="notice-date">
       <i class="iconfont icon-clock"></i>
-      <text>{{ item.date }}</text>
+      <text>{{ item.update_time }}</text>
     </view>
   </view>
 </view>

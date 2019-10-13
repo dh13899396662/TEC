@@ -16,7 +16,12 @@ Page({
       url: '../noticedetail/noticedetail'
     })
   },
-  onLoad: function() {
+  onLoad: function(options) {
+      console.log(options)
+      console.log(JSON.parse(options.data))
+      this.setData({
+          detailData: JSON.parse(options.data)
+      })
     wx.setNavigationBarTitle({
       title: '公告详情'
     })

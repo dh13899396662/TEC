@@ -11,14 +11,14 @@
   <view class="atlas-wrap">
     <view class="atlas-item" wx:for="{{ listData }}" wx:key="{{ index }}" bindtap="seeAtlas">
       <view class="atlas-image">
-        <image src="{{ item.path }}" mode="aspectFill"></image>
+        <image src="http://orangepi.cross.echosite.cn/jiaofei/wxa/common/getFileByID/{{ item.life_imgs }}" mode="aspectFill"></image>
         <view class="atlas-team">{{ item.team }}</view>
       </view>
       <view class="atlas-name">
-        <text>{{ item.name }}</text>
-        <i class="iconfont {{ item.sex == '1' ? 'icon-nan' : 'icon-nv-copy' }}"></i>
+        <text>{{ item.stu_name }}</text>
+        <i class="iconfont {{ item.stu_sex == '男' ? 'icon-nan' : 'icon-nv-copy' }}"></i>
       </view>
-      <view class="atlas-time">{{ item.time }}</view>
+      <view class="atlas-time">{{ item.uploadtime }}</view>
     </view>
   </view>
   <view class="atlas-foot t-bg" bindtap="toUpload">

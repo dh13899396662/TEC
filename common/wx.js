@@ -1,3 +1,9 @@
+export const ERRCODE = {
+    OK: '000000',
+    NO_ATTEST: '000001',
+    NO_SESSIONID: '000004'
+}
+
 export const toast = (msg, callback) => {
     wx.showModal({
         title: '提示',

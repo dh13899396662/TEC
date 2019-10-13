@@ -1,7 +1,7 @@
 //index.js
 //获取应用实例
 import * as api from '../../api/index.js'
-
+import * as xx from '../../common/wx.js'
 const app = getApp()
 
 Page({
@@ -9,7 +9,7 @@ Page({
     // 渲染测试数据
     noticeParams: {
       pageNumber: 1,
-      pageSize: 20,
+      pageSize: 3,
       sortField: '',
       sortMethord: 'asc'
     },
@@ -49,11 +49,9 @@ Page({
   },
   // 前往公告详情
   toNoticeDetail: function(e) {
-    let id = e.target.dataset.id;
-    console.log('当前公告ID：' + id)
-    wx.navigateTo({
-      url: '../noticedetail/noticedetail'
-    })
+    let index = e.target.dataset.index;
+      let data = JSON.stringify(this.data.noticeData)
+      xx.navTo(`/pages/noticelist/noticelist?noticeData=${data}`)
   },
   // 前往课时列表
   toLessonList: function (e) {
@@ -69,8 +67,28 @@ Page({
   },
   onLoad: function() {
     this.queryNotices()
+    this.getMyCouplan()
   },
   queryNotices () {
-    api.notices(this.data.noticeParams)
+    api.notices(this.data.noticeParams).then(res => {
+        if (res.data.retCode === xx.ERRCODE.OK) {
+            this.setData({
+                noticeData: res.data.retMsg.list
+            })
+            console.log(this.data.noticeData)
+        }
+    })
+  },
+  getMyCouplan () {
+      api.myCouplan().then(res => {
+          if (res.data.retCode === xx.ERRCODE.OK) {
+              this.setData({
+                  curriculumData: res.data.retMsg.list
+              })
+          }
+          console.log(res)
+      }).catch(ret => {
+          console.log(ret)
+      })
   }
 })
