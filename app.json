@@ -1,7 +1,7 @@
 {
   "pages": [
-      "pages/login/login",
-      "pages/index/index",
+        "pages/index/index",
+        "pages/login/login",
         "pages/teacher-check/teacher-check",
         "pages/attendance/attendance",
         "pages/usercenter/usercenter",

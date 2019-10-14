@@ -69,9 +69,12 @@ Page({
     },
     teacherCheck () {
         api.teacherCheck().then(res => {
-            if (res.data.retCode === '000004') {
-                xx.newTo('/pages/teacher-check/teacher-check')
-            }
+          if (res.data.retCode === '000001') {
+            xx.reLaunch('/pages/teacher-check/teacher-check')
+          } else {
+            console.log(11)
+            xx.reLaunch('/pages/index/index')
+          }
         })
     }
 })
