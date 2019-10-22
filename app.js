@@ -48,7 +48,7 @@ App({
         console.log('teacherChecked')
         api.teacherCheck().then(res => {
             console.log(res)
-            if (res.data.retCode === '000001') {
+          if (res.data.retCode === xx.ERRCODE.NO_ATTEST) {
                 xx.reLaunch('/pages/teacher-check/teacher-check')
             } else {
                 xx.reLaunch('/pages/index/index')

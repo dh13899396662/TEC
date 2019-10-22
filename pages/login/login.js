@@ -69,7 +69,7 @@ Page({
     },
     teacherCheck () {
         api.teacherCheck().then(res => {
-          if (res.data.retCode === '000001') {
+          if (res.data.retCode === xx.ERRCODE.NO_ATTEST) {
             xx.reLaunch('/pages/teacher-check/teacher-check')
           } else {
             console.log(11)

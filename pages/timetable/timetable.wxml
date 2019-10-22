@@ -8,7 +8,7 @@
     </picker>
     <view class="wrap-time-scroll">
       <scroll-view class="wrap-scroll" scroll-x="true">
-        <view wx:for="{{weekIndex}}" class="wrap-scroll-item {{index === activeIndex ? 'active' : ''}}"
+        <view wx:for="{{weekIndex}}" wx:key="{{index}}" class="wrap-scroll-item {{index === activeIndex ? 'active' : ''}}"
         data-index="{{index}}" bindtap="getActive">{{item}}</view>
       </scroll-view>
     </view>
@@ -21,15 +21,14 @@
   <view class="wrap-body">
     <view class="box-wrap" wx:for="{{ listData }}" wx:key="{{ index }}">
       <view class="box-date">
-        <view class="box-month">{{ item.week }}</view>
-        <view class="box-year">{{ item.day }}日</view>
+        <view class="box-month">{{ item.week_day }}</view>
+        <view class="box-year">{{ item.class_startTime }}日</view>
       </view>
       <view class="box-list">
-        <view wx:for="{{ item.lesson }}" wx:for-item="less" wx:for-index="idx" wx:key="{{ idx }}"
-         class="box-item {{ less.status == '1' ? 'tip-wait' : (less.status == '2' ? 'tip-ing' : '') }}">
-          <view class="box-name">{{ less.name }}</view>
-          <view class="box-team">{{ less.team }}</view>
-          <view class="box-time">{{ less.time }}</view>
+        <view class="box-item {{ item.course_state == '1' ? 'tip-wait' : (item.course_state == '2' ? 'tip-ing' : '') }}">
+          <view class="box-name">{{ item.class_name }}</view>
+          <view class="box-team">{{ item.course_memo }}</view>
+          <view class="box-time">{{ item.class_startDate }}</view>
         </view>
       </view>
     </view>

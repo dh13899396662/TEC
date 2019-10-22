@@ -126,6 +126,19 @@ Page({
       endDate: res.data.retMsg.endDay
     }).then(ret => {
       console.log(ret)
+      if (ret.data.retCode === xx.ERRCODE.OK) {
+        let list = ret.data.retMsg.map(item => {
+          if (item.class_startTime) {
+            item.class_startTime = item.class_startTime.slice(-2)
+          }
+          return item
+        })
+        console.log(list, '666')
+        this.setData({
+          listData: list
+        })
+        
+      }
     })
   },
   getActive (e) {
