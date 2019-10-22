@@ -13,7 +13,7 @@
 		"coverView": true
 	},
 	"compileType": "miniprogram",
-	"libVersion": "2.8.0",
+	"libVersion": "2.0.4",
 	"appid": "wx9df17045c64cac03",
 	"projectname": "TEC2",
 	"debugOptions": {

@@ -25,6 +25,11 @@ Page({
         })
     },
     release () {
-        api.teacherCertificat({ name: this.data.name, passwd: this.data.password }).then(res => res.data.retCode === '000000' && xx.newTo('/pages/index/index'))
+      api.teacherCertificat({ name: this.data.name, passwd: this.data.password }).then(res => {
+        xx.toast(res.data.retMsg)
+        if (res.data.retCode === xx.ERRCODE.OK) {
+          xx.barTo('/pages/index/index')
+        }
+      })
     }
 })

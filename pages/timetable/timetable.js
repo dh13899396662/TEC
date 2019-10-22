@@ -1,6 +1,7 @@
 //timetable.js
 //获取应用实例
 import * as api from '../../api/index.js'
+import * as xx from '../../common/wx.js'
 const app = getApp()
 
 Page({
@@ -10,6 +11,14 @@ Page({
     year: '',
     starDate: '2018-01',
     endDate: '',
+    weekIndex: [
+      '第一周',
+      '第二周',
+      '第三周',
+      '第四周',
+      '第五周'
+    ],
+    activeIndex: 0,
     listData: [{
       week: '周二',
       day: '01',
@@ -101,6 +110,30 @@ Page({
       year: year,
       endDate: year + '-' + month
     })
+    this.getDate()
+  },
+  getDate () {
+    let date = { year: this.data.year, month: this.data.month, weekIndex: this.data.activeIndex + 1}
+    api.getDate(date).then(res => {
+      if (res.data.retCode === xx.ERRCODE.OK) {
+        this.getCourses(res)
+      }
+    })
+  },
+  getCourses(res) {
+    api.myCourses({
+      startDate: res.data.retMsg.startDay,
+      endDate: res.data.retMsg.endDay
+    }).then(ret => {
+      console.log(ret)
+    })
+  },
+  getActive (e) {
+    console.log(e.currentTarget.dataset.index)
+    this.setData({
+      activeIndex: e.currentTarget.dataset.index
+    })
+    this.getDate()
   },
   _kaoQin () {
     api.kaoQin()

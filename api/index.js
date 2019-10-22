@@ -64,4 +64,6 @@ export const getFile = data => request(`/jiaofei/wxa/common/getFileByID/${data}`
 export const upload = data => request(`
 /jiaofei/wxa/teacher/uploadClassLife?life_imgs=${data.life_imgs}&life_userid=${data.life_userid}`, 'post', data, true)
 
-
+// 日期获取
+export const getDate = data => request(`
+/jiaofei/wxa/common/loadWeak?year=${data.year}&month=${data.month}&weekIndex=${data.weekIndex}`, 'post', data, true)
