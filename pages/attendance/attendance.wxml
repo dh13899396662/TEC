@@ -1,7 +1,7 @@
 <!--attendance.wxml-->
 <view class="container">
 
-  <view class="attend-no-data t-co" wx:if="{{ !noData }}">
+  <view class="attend-no-data t-co" wx:if="{{ !studentList.length }}">
     暂无课程可签到考勤
   </view>
 

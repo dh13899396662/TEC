@@ -8,12 +8,8 @@
     </picker>
     <view class="wrap-time-scroll">
       <scroll-view class="wrap-scroll" scroll-x="true">
-        <view class="wrap-scroll-item active">第一周</view>
-        <view class="wrap-scroll-item">第二周</view>
-        <view class="wrap-scroll-item">第三周</view>
-        <view class="wrap-scroll-item">第四周</view>
-        <view class="wrap-scroll-item">第五周</view>
-        <view class="wrap-scroll-item">第六周</view>
+        <view wx:for="{{weekIndex}}" class="wrap-scroll-item {{index === activeIndex ? 'active' : ''}}"
+        data-index="{{index}}" bindtap="getActive">{{item}}</view>
       </scroll-view>
     </view>
   </view>
