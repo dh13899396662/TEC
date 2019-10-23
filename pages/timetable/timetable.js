@@ -19,72 +19,22 @@ Page({
       '第五周'
     ],
     activeIndex: 0,
-    listData: [{
-      week: '周二',
-      day: '01',
-      lesson: [{
-        name: '绘画培训',
-        team: '幼儿绘画启蒙一班',
-        time: '10:00-11:30',
-        status: '3'
-      }, {
-        name: '绘画培训',
-        team: '幼儿绘画启蒙二班',
-        time: '16:00-18:00',
-        status: '3'
-      }]
-    }, {
-      week: '周三',
-      day: '02',
-      lesson: [{
-        name: '绘画培训',
-        team: '幼儿绘画启蒙一班',
-        time: '10:00-11:30',
-        status: '2'
-      }, {
-        name: '声乐中音练习培训',
-        team: '青少年儿童声乐练习进阶班',
-        time: '16:00-18:00',
-        status: '1'
-      }]
-      }, {
-        week: '周四',
-        day: '03',
-        lesson: [{
-          name: '声乐中音练习培训',
-          team: '青少年儿童声乐练习进阶班',
-          time: '10:00-11:30',
-          status: '1'
-        }, {
-          name: '绘画培训',
-          team: '幼儿绘画启蒙二班',
-          time: '16:00-18:00',
-          status: '1'
-        }]
-      }, {
-        week: '周五',
-        day: '04',
-        lesson: [{
-          name: '声乐中音练习培训',
-          team: '青少年儿童声乐练习进阶班',
-          time: '10:00-11:30',
-          status: '1'
-        }, {
-          name: '绘画培训',
-          team: '幼儿绘画启蒙二班',
-          time: '16:00-18:00',
-          status: '1'
-        }]
-      }, {
-        week: '周六',
-        day: '05',
-        lesson: [{
-          name: '声乐中音练习培训',
-          team: '青少年儿童声乐练习进阶班',
-          time: '10:00-11:30',
-          status: '1'
-        }]
-      }]
+    // listData: [{
+    //   week: '周二',
+    //   day: '01',
+    //   lesson: [{
+    //     name: '绘画培训',
+    //     team: '幼儿绘画启蒙一班',
+    //     time: '10:00-11:30',
+    //     status: '3'
+    //   }, {
+    //     name: '绘画培训',
+    //     team: '幼儿绘画启蒙二班',
+    //     time: '16:00-18:00',
+    //     status: '3'
+    //   }]
+    // }]
+    listData: []
   },
   bindDateChange: function(e) {
     let date = e.detail.value;
@@ -114,6 +64,7 @@ Page({
   },
   getDate () {
     let date = { year: this.data.year, month: this.data.month, weekIndex: this.data.activeIndex + 1}
+    xx.load()
     api.getDate(date).then(res => {
       if (res.data.retCode === xx.ERRCODE.OK) {
         this.getCourses(res)
@@ -131,15 +82,43 @@ Page({
           if (item.class_startTime) {
             item.class_startTime = item.class_startTime.slice(-2)
           }
+          if (item.plan_zone) {
+            item.course_state = this.getCourseState(item)
+          }
           return item
         })
-        console.log(list, '666')
         this.setData({
           listData: list
         })
-        
+        xx.hide()
       }
     })
+  },
+  getCourseState (item) {
+    let now = new Date()
+    let year = Number(now.getFullYear())
+    let month = Number(now.getMonth()) + 1
+    let day = Number(now.getDate())
+
+    month < 10 ? month = `0${month}` : month
+    day < 10 ? day = `0${day}` : day
+    let today = `${year}-${month}-${day}`
+    
+    let hour = Number(now.getHours())
+    hour === 0 ? hour = 24 : hour
+    let startHour = Number(item.plan_zone.slice(0, 2))
+    let endHour = Number(item.plan_zone.slice(6, 8))
+    let startYear = Number(item.plan_date.slice(0, 4))
+    let startMonth = Number(item.plan_date.slice(5, 7))
+    let startDay = Number(item.plan_date.slice(-2))
+
+    if (hour < startHour) item.course_state = 0
+    if (startHour <= hour && hour < endHour && today === item.plan_date) item.course_state = 1
+    if (hour > endHour && today === item.plan_date) item.course_state = 2
+    if (year > startYear || month > startMonth || day > startDay) {
+      item.course_state = 2
+    }
+    return item.course_state
   },
   getActive (e) {
     console.log(e.currentTarget.dataset.index)

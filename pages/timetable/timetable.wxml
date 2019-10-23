@@ -25,10 +25,10 @@
         <view class="box-year">{{ item.class_startTime }}日</view>
       </view>
       <view class="box-list">
-        <view class="box-item {{ item.course_state == '1' ? 'tip-wait' : (item.course_state == '2' ? 'tip-ing' : '') }}">
+        <view class="box-item {{ !item.course_state ? 'tip-wait' : (item.course_state == 1 ? 'tip-ing' : '') }}">
           <view class="box-name">{{ item.class_name }}</view>
           <view class="box-team">{{ item.course_memo }}</view>
-          <view class="box-time">{{ item.class_startDate }}</view>
+          <view class="box-time">{{ item.plan_zone }}</view>
         </view>
       </view>
     </view>
